@@ -1,9 +1,13 @@
 // PokemonCard
 
-function PokemonCard() {
+function PokemonCard(props) {
+
+    console.log(props);
+
     return(
         <li>
-            {/* This is where we assemble the card */}
+            <p>{props.pokemonName}</p>
+            {/* <img src={props.} alt="" /> */}
         </li>
     );
 };

@@ -9,12 +9,12 @@ function App() {
   return (
     <>
       <div className = 'wrapper'>
-        <Header />;
+        <Header />
         <p>Story Element Here?</p>
-        <UserInfo />;
-        <PokemonSelections />;
-        <Results />;
-        <Footer />;
+        <UserInfo />
+        <PokemonSelections />
+        <Results />
+        <Footer />
       </div>
     </>
   );
