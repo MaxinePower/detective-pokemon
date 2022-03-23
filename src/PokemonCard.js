@@ -6,8 +6,7 @@ function PokemonCard(props) {
 
     return(
         <li>
-            {/* <p>{props.key}</p> */}
-            <p>testing!</p>
+            <p>{props.key}</p>
             <p>{props.name}</p>
             <p>{props.type}</p>
             <img src={props.pokeImg} alt={props.name}/>

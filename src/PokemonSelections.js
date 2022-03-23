@@ -9,8 +9,9 @@ function PokemonSelections() {
 
 
     useEffect(() => {
+        let newState = [...pokemon];
 
-        let newState = [];
+        // let newState = [];
         for (let i = 0; i < 5; i++) {
 
             // Generate random pokemon id number
@@ -21,27 +22,32 @@ function PokemonSelections() {
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
             .then(response => {
+                
                 newState.push({
                     key: i, 
                     name: response.data.name, 
                     type: response.data.types[0].type.name, 
                     pokeImg: response.data.sprites.other.home.front_default
+                    
                 });
                 
+              
             })
             .catch(() => {console.log("error")})
         }
         setPokemon(newState);
-    }, []);
+      
+    }, [pokemon]);
 
-    console.log(pokemon);
-    console.log(pokemon.length);
+    // console.log(pokemon);
+
+    // console.log(pokemon.length);
     return (
         <section>
             <ul>
                 {
                     pokemon.map((individualPokemon) => {
-                        console.log(individualPokemon.name);
+                        // console.log(individualPokemon.name);
                         return (
                             <PokemonCard
                                 // key={individualPokemon.key}
