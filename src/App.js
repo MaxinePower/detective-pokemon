@@ -7,12 +7,12 @@ import Footer from './Footer.js';
 import { useState } from 'react';
 
 function App() {
-  
   // User name from UserInfo component
   const [userName, setUserName] = useState('');
 
   // State for chosen crime
-  const [chosenCrime, setChosenCrime] = useState({})
+  const [chosenCrimeType, setChosenCrimeType] = useState('');
+  const [chosenCaseNum, setChosenCaseNum] = useState('');
 
   return (
     <>
@@ -22,7 +22,8 @@ function App() {
         <UserInfo
           updateUserName={setUserName}
           currentUserName={userName}
-          updateChosenCrime={setChosenCrime}
+          updateChosenCrimeType={setChosenCrimeType}
+          updateChosenCaseNum={setChosenCaseNum}
         />
         <PokemonSelections />
         <Results />
