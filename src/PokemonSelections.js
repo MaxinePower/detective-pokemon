@@ -20,18 +20,22 @@ function PokemonSelections() {
             axios({
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
-                .then(response => {
-                    newState.push({
-                        key: i, 
-                        name: response.data.name, 
-                        type: response.data.types[0].type.name, 
-                        pokeImg: response.data.sprites.other.home.front_default
-                    });
-                    setPokemon(newState);
-                })
+            .then(response => {
+                newState.push({
+                    key: i, 
+                    name: response.data.name, 
+                    type: response.data.types[0].type.name, 
+                    pokeImg: response.data.sprites.other.home.front_default
+                });
+                
+            })
+            .catch(() => {console.log("error")})
         }
+        setPokemon(newState);
     }, []);
 
+    console.log(pokemon);
+    console.log(pokemon.length);
     return (
         <section>
             <ul>
@@ -40,7 +44,7 @@ function PokemonSelections() {
                         console.log(individualPokemon.name);
                         return (
                             <PokemonCard
-                                key={individualPokemon.key}
+                                // key={individualPokemon.key}
                                 name={individualPokemon.name}
                                 type={individualPokemon.type}
                                 pokeImg={individualPokemon.pokeImg}
