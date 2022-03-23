@@ -7,48 +7,47 @@ import { useEffect, useState } from 'react';
 function PokemonSelections() {
     const [pokemon, setPokemon] = useState([]);
 
-    
+
     useEffect(() => {
-        
-        for (let i=0; i<5; i++) {
-            
+
+        let newState = [];
+        for (let i = 0; i < 5; i++) {
+
             // Generate random pokemon id number
             let id = Math.floor(Math.random() * (898 - 1)) + 1;
-            
+
             // API Call
             axios({
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
-            .then(response => {
-                // console.log(response.data);
-                // console.log(response.data.forms[0].name);
-                // console.log(response.data.types[0].type.name);
-                // console.log(response.data.sprites.other.home.front_default);
-                // setPokemon(response.data);
-                
-                // console.log('this is state', setPokemon);
-                let newState = this.push(response.data);
-                
-                // console.log(newState);
-                setPokemon(newState);
-            })
+                .then(response => {
+                    newState.push({
+                        key: i, 
+                        name: response.data.name, 
+                        type: response.data.types[0].type.name, 
+                        pokeImg: response.data.sprites.other.home.front_default
+                    });
+                    setPokemon(newState);
+                })
         }
     }, []);
-    console.log(pokemon);
+
     return (
         <section>
             <ul>
-                {pokemon.map((individualPokemon) =>{
-                    return <PokemonCard pokemonName={individualPokemon.name} />
-
-
-                    
+                {
+                    pokemon.map((individualPokemon) => {
+                        console.log(individualPokemon.name);
+                        return (
+                            <PokemonCard
+                                key={individualPokemon.key}
+                                name={individualPokemon.name}
+                                type={individualPokemon.type}
+                                pokeImg={individualPokemon.pokeImg}
+                            />
+                        )
+                    })
                 }
-                
-                )}
-                {/* pokemon array */}
-                {/* <PokemonCard /> */}
-
             </ul>
         </section>
     );

@@ -6,10 +6,12 @@ function PokemonCard(props) {
 
     return(
         <li>
-            <p>{props.pokemonName}</p>
-            {/* <img src={props.} alt="" /> */}
+            <p>{props.key}</p>
+            <p>{props.name}</p>
+            <p>{props.type}</p>
+            <img src={props.pokeImg} alt={props.name}/>
         </li>
-    );
-};
+    )
+}
 
 export default PokemonCard;
