@@ -3,20 +3,31 @@ import CrimeCases from "./CrimeCases";
 import {useState} from "react";
 // UserInfo component (this will contain the CrimeCases component)
 function UserInfo(props) {
-    const handleNameChange = (e) => {
-        props.updateUserName(e.target.value);
-    }
+    const [changingUserName, setChangingUsername] = useState('');
+    const [maybeChosenLocation, setMaybeChosenLocation] = useState('');
     const [chosenLocation, setChosenLocation] = useState('');
+    
+    const handleNameChange = (e) => {
+        setChangingUsername(e.target.value);
+    }
+    const handleLocationChange = (e) => {
+        setMaybeChosenLocation(e.target.value); 
+    }
+    const handleUserInfoSubmit = (e) => {
+        e.preventDefault();
+        props.updateUserName(changingUserName);
+        setChosenLocation(maybeChosenLocation);
+    }
     return(
         <>
             <section className="userInfo">
-                <form action="">
+                <form action="" onSubmit={handleUserInfoSubmit}>
                 {/* user inputs name into input field */}
                 {/* save this input in a variable and also bind it to the input (controlled inputs) */}
                     <label htmlFor="userName">Officer Name:</label>
-                    <input type="text" name="userName" id="userName" placeholder="Joshua Doe" 
+                    <input type="text" name="userName" id="userName" placeholder="Joshua Doe"
                     onChange={handleNameChange}
-                    value={props.currentUserName}
+                    value={changingUserName}
                     />
 
                     {/* user selects a location from a drop down menu */}
@@ -26,7 +37,7 @@ function UserInfo(props) {
                     name="locationDropDown"
                     id="locationDropDown"
                     // trying an inline callback function for event listener
-                    onChange={ (e) => {setChosenLocation(e.target.value) } }
+                    onChange={handleLocationChange}
                     defaultValue='placeholder'
                     >
                         <option value="placeholder" disabled>Pick one:</option>
@@ -36,6 +47,8 @@ function UserInfo(props) {
                         <option value="928868">Croydon, London</option>
                         <option value="956527">Piccadilly Circus, London</option>
                     </select>
+
+                    <button type="submit">View Your Cases</button>
                 </form>
             </section>
             <CrimeCases 
