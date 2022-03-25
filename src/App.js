@@ -26,7 +26,7 @@ function App() {
           updateChosenCaseNum={setChosenCaseNum}
         />
         <PokemonSelections />
-        <Results />
+        {/* <Results /> */}
         <Footer />
       </div>
     </>

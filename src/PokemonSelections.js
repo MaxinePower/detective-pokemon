@@ -21,6 +21,7 @@ function PokemonSelections() {
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
             .then(response => {
+                console.log(response)
                 setLoading(true);
                 newState.push({
                     key: id,

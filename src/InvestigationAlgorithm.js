@@ -1,9 +1,9 @@
 // InvestigationAlgorithm
 
-function InvestigationAlgorithm() {
+function InvestigationAlgorithm({pType}) {
     return( 
         <div>
-            {/* <p>${investigation}</p> */}
+            <p>{pType}</p>
         </div>
     );
 };
