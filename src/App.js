@@ -25,7 +25,11 @@ function App() {
           updateChosenCrimeType={setChosenCrimeType}
           updateChosenCaseNum={setChosenCaseNum}
         />
-        <PokemonSelections />
+        {
+          chosenCrimeType !== ""
+        ? <PokemonSelections selectedCrime={chosenCrimeType}/>
+        : null
+        }
         {/* <Results /> */}
         <Footer />
       </div>

@@ -37,3 +37,13 @@ html {
 body {
   font-size: 1rem;
 }
+
+/* Error Flag on UserInfo component */
+
+.errorFlag{
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
