@@ -1,11 +1,17 @@
 // PokemonCard
 
-function PokemonCard() {
+function PokemonCard(props) {
+
+    console.log(props.name);
+
     return(
         <li>
-            {/* This is where we assemble the card */}
+            {/* <p>{props.key}</p> */}
+            <p>{props.name}</p>
+            <p>{props.type}</p>
+            <img src={props.pokeImg} alt={props.name}/>
         </li>
-    );
-};
+    )
+}
 
 export default PokemonCard;
