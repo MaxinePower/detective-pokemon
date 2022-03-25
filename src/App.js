@@ -2,7 +2,8 @@ import './App.css';
 import Header from './Header.js';
 import UserInfo from './UserInfo';
 import PokemonSelections from './PokemonSelections';
-import Results from './Results';
+// import Results from './Results';
+// import InvestigationAlgorithm from './InvestigationAlgorithm';
 import Footer from './Footer.js';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
         <p>Story Element Here?</p>
         <UserInfo />
         <PokemonSelections />
-        <Results />
+        {/* <InvestigationAlgorithm /> */}
+        {/* <Results /> */}
         <Footer />
       </div>
     </>
