@@ -25,17 +25,17 @@ function UserInfo(props) {
         setNameErrorStatus(false)
 
         // Error handling for form inputs
-        if (maybeChosenLocation != "placeholder" && changingUserName != "") {
+        if (maybeChosenLocation !== "placeholder" && changingUserName !== "") {
             props.updateUserName(changingUserName);
             setChosenLocation(maybeChosenLocation);
-        } else if (changingUserName == "" && maybeChosenLocation == "placeholder") {
+        } else if (changingUserName === "" && maybeChosenLocation === "placeholder") {
             // alert("please enter your name and choose a location!")
             setLocationErrorStatus(true)
             setNameErrorStatus(true)
-        } else if (changingUserName == "") {
+        } else if (changingUserName === "") {
             // alert("please enter your name!")
             setNameErrorStatus(true)
-        } else if (maybeChosenLocation == "placeholder") {
+        } else if (maybeChosenLocation === "placeholder") {
             // alert("please choose a location!")
             setLocationErrorStatus(true)
         }
