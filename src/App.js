@@ -31,8 +31,8 @@ function App() {
         : null
         }
         {/* <Results /> */}
-        <Footer />
       </div>
+        <Footer />
     </>
   );
 }

@@ -24,18 +24,31 @@ html {
 }
 
 /* FONTS */
-  /* font-family: 'Barlow', sans-serif; */
+/* Header */
   /* font-family: 'Iceberg', cursive; */
+/* Body/Paragraph */
+  /* font-family: 'Barlow', sans-serif; */
 
 /* SITE COLOURS */
   /* yellow: #D5C300 */
   /* dark blue: #273878 */
   /* pastel green: #E5FECC */
+  /* lemon yellow crayola: #FFF799 */
 
 /* Font Styles */
 
 body {
   font-size: 1rem;
+  position: relative;
+  padding-bottom: 15%;
+}
+
+h2, h3, h4 {
+  font-family: 'Iceberg', cursive;
+}
+
+p {
+  font-family: 'Barlow', sans-serif;
 }
 
 /* Error Flag on UserInfo component */
@@ -46,4 +59,31 @@ body {
 
 .hidden {
   display: none;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #273878;
+  color: #FFF;
+  text-align: center;
+  padding: 2% 0%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #FFF799;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+footer a:hover,
+footer a:focus {
+  border-bottom: 2px solid #FFF799;
+}
+
+.portfolioLinks {
+  margin-top: 5px;
 }
