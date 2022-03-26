@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 
-function PokemonSelections() {
+function PokemonSelections(props) {
     const [pokemon, setPokemon] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
@@ -21,6 +21,7 @@ function PokemonSelections() {
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
             .then(response => {
+                console.log(response)
                 setLoading(true);
                 newState.push({
                     key: id,
@@ -52,6 +53,7 @@ function PokemonSelections() {
                         // console.log(individualPokemon.name);
                         return (
                             <PokemonCard
+                                setPType = {props.setPType}
                                 key={individualPokemon.key}
                                 name={individualPokemon.name}
                                 type={individualPokemon.type}
