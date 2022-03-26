@@ -5,10 +5,10 @@ import InvestigationAlgorithm from "./InvestigationAlgorithm";
 
 
 function PokemonCard(props) {
-    const [pType, setPType] = useState("");
+   
     const selectedPokemonType = (event) => {
         const pokemonType = props.type
-        setPType(event.target.value)
+        props.setPType(event.target.value)
     }
 
     return(
@@ -20,7 +20,7 @@ function PokemonCard(props) {
                 <p>Hey Detective! I'm {props.name} and my type is {props.type}. Do you want me to assist you with this case?</p>
             <button onClick={selectedPokemonType} value={props.type}>Choose {props.name}</button>
         </li>
-        <InvestigationAlgorithm pType={pType} />
+        {/* <InvestigationAlgorithm pType={pType} /> */}
         </>
     )
 }

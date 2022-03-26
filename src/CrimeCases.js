@@ -57,7 +57,7 @@ function CrimeCases(props) {
                     {/* if this ? (do this) : (else do this) */}
                     {
                         crimeArray.length > 0 ? crimeArray.map((individualCrime) => {
-                            console.log(individualCrime);
+                            // console.log(individualCrime);
                             return <CrimeFile typeOfCrime={individualCrime.category} key={individualCrime.id} caseID={individualCrime.id} locationName={individualCrime.location.street.name}
                             />
                         }) : <p>no open cases</p>
