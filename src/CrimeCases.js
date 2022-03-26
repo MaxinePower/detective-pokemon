@@ -12,7 +12,7 @@ function CrimeCases(props) {
             axios({
                 url: 'https://data.police.uk/api/crimes-at-location',
                 params: {
-                    date: "2021-08",
+                    // date: "2021-08",
                     location_id: props.currentChosenLocation
                 }
             }).then((policeApiResult) => {

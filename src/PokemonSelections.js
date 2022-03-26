@@ -37,7 +37,7 @@ function PokemonSelections(props) {
         setPokemon(newState);
         console.log(newState);
 
-    }, []);
+    }, [props.selectedCrime]);
 
     if (isLoading) {
         return <div className="App">Loading...</div>;

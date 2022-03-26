@@ -26,13 +26,18 @@ function App() {
           updateChosenCrimeType={setChosenCrimeType}
           updateChosenCaseNum={setChosenCaseNum}
         />
+        {
+          chosenCrimeType !== ""
+        ? <PokemonSelections selectedCrime={chosenCrimeType}/>
+        : null
+        }
         <PokemonSelections setPType={setPType} />
         <Results 
         crimeType={chosenCrimeType}
         pokiType={pType}
         />
-        <Footer />
       </div>
+        <Footer />
     </>
   );
 }
