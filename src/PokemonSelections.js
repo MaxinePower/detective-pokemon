@@ -21,6 +21,7 @@ function PokemonSelections(props) {
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
             .then(response => {
+                console.log(response)
                 setLoading(true);
                 newState.push({
                     key: id,
@@ -52,6 +53,7 @@ function PokemonSelections(props) {
                         // console.log(individualPokemon.name);
                         return (
                             <PokemonCard
+                                setPType = {props.setPType}
                                 key={individualPokemon.key}
                                 name={individualPokemon.name}
                                 type={individualPokemon.type}
