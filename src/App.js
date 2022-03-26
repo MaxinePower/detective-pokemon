@@ -28,10 +28,9 @@ function App() {
         />
         {
           chosenCrimeType !== ""
-        ? <PokemonSelections selectedCrime={chosenCrimeType}/>
-        : null
+          ? <PokemonSelections selectedCrime={chosenCrimeType} setPType={setPType} />
+          : null
         }
-        <PokemonSelections setPType={setPType} />
         <Results 
         crimeType={chosenCrimeType}
         pokiType={pType}
