@@ -231,7 +231,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   text-align: center;
   margin-top: 4%;
   text-transform: capitalize;
-
+}
 /* Header Styles */
 .introduction  {
   position: relative;
