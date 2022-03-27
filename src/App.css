@@ -48,7 +48,7 @@ h2, h3, h4 {
   font-family: 'Iceberg', cursive;
 }
 
-p {
+p, .userInputContainers label, .userInputContainers input, .userInputContainers input::placeholder, .userInputContainers select, .userInputContainers button {
   font-family: 'Barlow', sans-serif;
 }
 
@@ -61,6 +61,80 @@ p {
 .hidden {
   display: none;
 }
+
+/* UserInfo Styles */
+.userInfo {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+}
+.userInfo form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.userInputContainers {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 2%);
+  margin: 1%;
+}
+.userInputContainers label {
+  margin-bottom: 3%;
+  color: #273878;
+  font-weight: 500;
+}
+.userInputContainers select, .userInputContainers input {
+  appearance: none;
+  display: block;
+  color: #273878;
+  padding: 2% 5%;
+  border: 3px solid #273878;
+  border-radius: 30px;
+  width: 100%;
+  background-color: #FFF799;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+.userInputContainers input::placeholder {
+  color: #273878;
+  transition: 0.2s;
+}
+.userInputContainers option {
+  font-weight: 600;
+  line-height: 1.2rem;
+}
+.userInputContainers select:hover,.userInputContainers select:focus, .userInputContainers input:hover, .userInputContainers input:focus {
+  color: #FFF799;
+  background-color: #273878;
+}
+.userInputContainers input:focus::placeholder, .userInputContainers input:hover::placeholder {
+  color: #FFF799;
+}
+/* maybe need to move this to general since it;'s also for the caseButtons */
+.viewCasesButton, .caseButton {
+  margin-top: 2%;
+  padding: 2% 3.5%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #273878;
+  border: 3px solid #273878;
+  color: #FFe000;
+  /* color: #d5c300; */
+  border-radius: 30px;
+  transition: 0.2s;
+  /* box shadow */
+  box-shadow: 2px 3px;
+}
+.viewCasesButton:hover, .viewCasesButton:focus {
+  background-color: #FFe000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+
 
 /* Footer Styles */
 
