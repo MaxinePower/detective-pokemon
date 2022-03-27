@@ -23,6 +23,10 @@ html {
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+}
+
 /* FONTS */
 /* Header */
 h1 {
@@ -61,7 +65,7 @@ h2, h3, h4 {
   font-family: 'Iceberg', cursive;
 }
 
-p {
+p, .userInputContainers label, .userInputContainers input, .userInputContainers input::placeholder, .userInputContainers select, .userInputContainers button, .caseButton {
   font-family: 'Barlow', sans-serif;
 }
 
@@ -69,12 +73,164 @@ p {
 
 .errorFlag{
   color: red;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  margin: 1% 0 0 5%;
 }
 
 .hidden {
   display: none;
 }
 
+/* UserInfo Styles */
+.userInfo {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+.userInfo form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.userInputContainers {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 2%);
+  margin: 1%;
+}
+.userInputContainers label {
+  margin-bottom: 3%;
+  color: #273878;
+  font-weight: 500;
+}
+.userInputContainers select {
+  background-image: url(../assets/magnifying-glass-location-solid.svg);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 1rem;
+}
+
+.userInputContainers select, .userInputContainers input {
+  appearance: none;
+  display: block;
+  color: #273878;
+  padding: 2% 5%;
+  border: 3px solid #273878;
+  border-radius: 30px;
+  width: 100%;
+  background-color: #FFF799;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+.userInputContainers input::placeholder {
+  color: #273878;
+  transition: 0.2s;
+}
+.userInputContainers option {
+  font-weight: 600;
+  line-height: 1.2rem;
+}
+.userInputContainers select:hover,.userInputContainers select:focus, .userInputContainers input:hover, .userInputContainers input:focus {
+  color: #FFF799;
+  background-color: #273878;
+}
+.userInputContainers input:focus::placeholder, .userInputContainers input:hover::placeholder {
+  color: #FFF799;
+}
+/* maybe need to move this to general since it;'s also for the caseButtons */
+.viewCasesButton, .caseButton {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 2% 3.5%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #273878;
+  border: 3px solid #273878;
+  color: #F5e000;
+  /* color: #d5c300; */
+  border-radius: 30px;
+  transition: 0.2s;
+  /* box shadow */
+  box-shadow: 2px 3px;
+}
+.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
+  background-color: #F5e000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+
+/* CrimeFiles styles */
+
+.crimeCases {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+
+.crimeCases h2 {
+  text-align: center;
+  font-size: 2.75rem;
+  letter-spacing: 1px;
+  color: #273878;
+}
+
+.crimeCases fieldset {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: 10px solid #524c39;
+  background-image: url(../assets/crime-case-background.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  box-shadow: 3px 5px 2px rgb(118, 118, 118);
+  margin: 2% 1.5% 0 1.5%;
+  padding: 3%; 
+}
+
+.crimeCases input[type=radio] {
+  display: none;
+}
+
+.caseFile {
+  width: calc((100% / 3) - 2%);
+  background-color: #FFF799;
+  margin: 2% 1%;
+  padding: 5% 2%;
+  /* text-align: center; */
+  box-shadow: 3px 5px 2px rgb(58, 58, 58);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.caseDetail {
+  font-weight: 500;
+  display: block;
+}
+
+.caseFile h3 {
+  margin-bottom: 2%;
+}
+
+.caseFile p {
+  margin-bottom: 2%;
+}
+
+.active {
+  text-transform: uppercase;
+}
+
+.caseButton {
+  text-align: center;
+  margin-top: 4%;
+  text-transform: capitalize;
 
 /* Header Styles */
 .introduction  {

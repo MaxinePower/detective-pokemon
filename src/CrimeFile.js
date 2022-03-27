@@ -4,9 +4,9 @@ function CrimeFile(props) {
     return (
         <li className="caseFile">
             <h3>Case #: {props.caseID}</h3>
-            <p>Crime Type: {props.typeOfCrime}</p>
-            <p>Case Status: open</p>
-            <p>Location: {props.locationName}</p>
+            <p><span className="caseDetail">Crime Type: </span>{props.typeOfCrime}</p>
+            <p><span className="caseDetail">Case Status: </span><span className="active">active</span></p>
+            <p><span className="caseDetail">Location: </span>{props.locationName}</p>
             <label htmlFor={props.caseID} className="caseButton">Choose this case</label>
             <input type="radio" name="crimeCases" id={props.caseID} value={props.typeOfCrime}  />
         </li>
