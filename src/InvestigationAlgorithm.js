@@ -5,7 +5,7 @@ import investigationData from './investigationData.json'
 
 function InvestigationAlgorithm(props) {
 
-    let iResult = 'TBD';
+    let iResult = '';
 
     // checking for != '' will stop the algorithm from doing all the checks
     if (props.crimeType !== '' && props.pType !== '') {
@@ -13,17 +13,19 @@ function InvestigationAlgorithm(props) {
         const willUserLose = crimeTypesInvestigationData.includes(props.pType);
         // checking for if the pTypes in the array for the crimeType matches the users chosen pokemon type
         if (willUserLose) {
-            iResult = 'lose';
+            iResult = "Better luck next time! Your Pokemon wasn't the right type to solve this crime.";
+            <button>Play Again?</button>
         } else {
-            iResult = 'win';
+            iResult = 'Congratulations! You solved the case!';
+            <button>Play Again?</button>
         }
     } else {
-        console.log("pick a crime and a pokemon, bitch");
+        // console.log("pick a crime and a pokemon");
     }
     console.log(iResult);
     return (
         <div>
-            <p>You {iResult}!</p>
+            <p>{iResult}</p>
         </div>
     );
 };
