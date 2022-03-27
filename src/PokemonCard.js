@@ -1,7 +1,6 @@
 // PokemonCard
 
 import { useState } from "react";
-import InvestigationAlgorithm from "./InvestigationAlgorithm";
 
 
 function PokemonCard(props) {
@@ -13,14 +12,17 @@ function PokemonCard(props) {
 
     return(
         <>
-        <li>
+        <li className='pokemonSuggestion'>
+            <div>
             <img src={props.pokeImg} alt={props.name}/>
-            {/* update usename in <p> */}
-            {/* add cryme scene type in sentence */}
-                <p>Hey Detective! I'm {props.name} and my type is {props.type}. Do you want me to assist you with this case?</p>
-            <button onClick={selectedPokemonType} value={props.type}>Choose {props.name}</button>
+            </div>
+            <div className='textAndButton'>
+                <p>Hey Detective!</p>
+                <p>I'm {props.name} and my type is {props.type}.</p>
+                <p>Do you want me to assist you with this case?</p>
+                <button onClick={selectedPokemonType} value={props.type}>Choose {props.name}</button>
+            </div>
         </li>
-        {/* <InvestigationAlgorithm pType={pType} /> */}
         </>
     )
 }

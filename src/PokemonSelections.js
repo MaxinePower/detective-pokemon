@@ -21,7 +21,6 @@ function PokemonSelections(props) {
                 url: `https://pokeapi.co/api/v2/pokemon/${id}`
             })
             .then(response => {
-                console.log(response)
                 setLoading(true);
                 newState.push({
                     key: id,
@@ -30,12 +29,11 @@ function PokemonSelections(props) {
                     pokeImg: response.data.sprites.other.home.front_default
                 });
                 setLoading(false);
-
             })
             .catch(() => { console.log("error") })
         }
         setPokemon(newState);
-        console.log(newState);
+        // console.log(newState);
 
     }, [props.selectedCrime]);
 
@@ -43,14 +41,11 @@ function PokemonSelections(props) {
         return <div className="App">Loading...</div>;
     }
 
-
-    // console.log(pokemon.length);
     return (
         <section>
             <ul>
                 {
                     pokemon.map((individualPokemon) => {
-                        // console.log(individualPokemon.name);
                         return (
                             <PokemonCard
                                 setPType = {props.setPType}
