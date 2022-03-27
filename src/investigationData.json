@@ -1,0 +1,72 @@
+{
+    "anti-social-behaviour": [
+        "ghost",
+        "psychic"
+    ],
+    "bicycle-theft": [
+        "water",
+        "ground",
+        "rock"
+    ],
+    "burglary": [
+        "fire",
+        "ground",
+        "rock"
+    ],
+    "criminal-damage-arson": [
+        "grass",
+        "ice",
+        "bug",
+        "steel"
+    ],
+    "drugs": [
+        "grass",
+        "fair"
+    ],
+    "other-theft": [
+        "normal",
+        "ice",
+        "rock",
+        "dark",
+        "steel"
+    ],
+    "possession-of-weapons": [
+        "grass",
+        "ground",
+        "flying",
+        "dragon"
+    ],
+    "public-order": [
+        "water",
+        "flying"
+    ],
+    "robbery": [
+        "fire",
+        "electric",
+        "poison",
+        "fairy"
+    ],
+    "shoplifting": [
+        "grass",
+        "fighting",
+        "bug"
+    ],
+    "theft-from-the-person": [
+        "fighting",
+        "poison"
+    ],
+    "vehicle-crime": [
+        "grass",
+        "psychic",
+        "dark"
+    ],
+    "violence-and-sexual-offences": [
+        "psychic",
+        "ghost"
+    ],
+    "other-crime": [
+        "ice",
+        "rock",
+        "fairy"
+    ]
+}

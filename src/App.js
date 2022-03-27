@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header.js';
+import chatBubble from './assets/Speech-Bubble.png'
+import UserInfo from './UserInfo';
+import PokemonSelections from './PokemonSelections';
+import Results from './Results';
+// import InvestigationAlgorithm from './InvestigationAlgorithm';
+import Footer from './Footer.js';
+import { useState } from 'react';
 
 function App() {
+  // User name from UserInfo component
+  const [userName, setUserName] = useState('');
+  // State for chosen crime
+  const [chosenCrimeType, setChosenCrimeType] = useState('');
+  const [chosenCaseNum, setChosenCaseNum] = useState('');
+  const [pType, setPType] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className = 'wrapper'>
+        <Header />
+        <div className = 'introduction'>
+          <img className = 'bubble' src={chatBubble}></img>
+          <div className = 'openingText'>
+            <p>Hello there! Welcome to the Scotland Yard’s Pokémon Investigation Unit. This special unit solves crimes with the help of Pokémon. These Pokémon are specially trained and qualified to assist PIU detectives with their cases.</p>
+            <p>Oh! I see you don’t have your PIU ID with you – it must be your first day as a Detective! Congratulations! Let me help you get your ID set up. Can you give me your name?</p>        
+          </div>
+        </div>
+        <UserInfo
+          updateUserName={setUserName}
+          currentUserName={userName}
+          updateChosenCrimeType={setChosenCrimeType}
+          updateChosenCaseNum={setChosenCaseNum}
+        />
+        {
+          chosenCrimeType !== ""
+          ? <PokemonSelections selectedCrime={chosenCrimeType} setPType={setPType} />
+          : null
+        }
+        <Results 
+        crimeType={chosenCrimeType}
+        pokiType={pType}
+        />
+      </div>
+        <Footer />
+    </>
   );
 }
 
