@@ -1,12 +1,12 @@
 // PokemonCard
 
-import { useState } from "react";
+// import { useState } from "react";
 
 
 function PokemonCard(props) {
    
     const selectedPokemonType = (event) => {
-        const pokemonType = props.type
+        // const pokemonType = props.type
         props.setPType(event.target.value)
     }
 
