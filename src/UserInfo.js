@@ -75,7 +75,7 @@ function UserInfo(props) {
                             <option value="964955">Camden Town, London</option>
                             <option value="956143">Covent Garden, London</option>
                             <option value="928868">Croydon, London</option>
-                            <option value="956559">Piccadilly Circus, London</option>
+                            <option value="956557">Piccadilly Circus, London</option>
                             <option value="538862">Bath, Somerset</option>
                             <option value="560578">Cambridge, Cambridgeshire</option>
                             <option value="1080958">Cardiff, Wales</option>
