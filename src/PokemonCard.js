@@ -4,7 +4,6 @@
 
 
 function PokemonCard(props) {
-   
     const selectedPokemonType = (event) => {
         // const pokemonType = props.type
         props.setPType(event.target.value)

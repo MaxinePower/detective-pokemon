@@ -7,8 +7,8 @@ function CrimeFile(props) {
             <p><span className="caseDetail">Crime Type: </span>{props.typeOfCrime}</p>
             <p><span className="caseDetail">Case Status: </span><span className="active">active</span></p>
             <p><span className="caseDetail">Location: </span>{props.locationName}</p>
+            <input type="radio" name="crimeCases" id={props.caseID} value={props.typeOfCrime} />
             <label htmlFor={props.caseID} className="caseButton">Choose this case</label>
-            <input type="radio" name="crimeCases" id={props.caseID} value={props.typeOfCrime}  />
         </li>
     )
 };

@@ -42,7 +42,7 @@ function UserInfo(props) {
     }
     return(
         <>
-            <section className="userInfo">
+            <section className="userInfo" id="userInfo">
                 <form action="" onSubmit={handleUserInfoSubmit}>
                 {/* user inputs name into input field */}
                 {/* save this input in a variable and also bind it to the input (controlled inputs) */}
@@ -66,7 +66,6 @@ function UserInfo(props) {
                         <select
                         name="locationDropDown"
                         id="locationDropDown"
-                        // trying an inline callback function for event listener
                         onChange={handleLocationChange}
                         defaultValue='placeholder'
                         >
@@ -77,12 +76,10 @@ function UserInfo(props) {
                             <option value="928868">Croydon, London</option>
                             <option value="956557">Piccadilly Circus, London</option>
                             <option value="538862">Bath, Somerset</option>
-                            <option value="560578">Cambridge, Cambridgeshire</option>
+                            <option value="560578">Cambridge, Cambs.</option>
                             <option value="1080958">Cardiff, Wales</option>
                             <option value="1489701">Edinburgh, Scotland</option>
                             <option value="1296059">Leeds, West Yorkshire</option>
-
-
                         </select>
                         {/* Form error handling */}
                         {
@@ -91,8 +88,9 @@ function UserInfo(props) {
                             : <span className="errorFlag hidden">Please choose a location.</span>
                         }
                     </div>
-
-                    <button type="submit" className="viewCasesButton">View Your Cases</button>
+                    {/* <Link to='/#skills'> */}
+                        <button type="submit" className="viewCasesButton">View Your Cases</button>
+                    {/* </Link> */}
                 </form>
             </section>
             {
