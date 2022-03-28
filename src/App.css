@@ -29,7 +29,19 @@ ul {
 
 /* FONTS */
 /* Header */
-  /* font-family: 'Iceberg', cursive; */
+h1 {
+  font-family: 'Iceberg', cursive;
+  font-size: 5rem;
+  text-align: center;
+  color: #F5E000;
+    /* color: #273878; */
+  text-shadow: 5px 5px #000;
+  /* -webkit-text-stroke-width: 1px; */
+  /* -webkit-text-stroke-color: #273878; */
+    /* -webkit-text-stroke-color: #F5E000; */
+
+}
+
 /* Body/Paragraph */
   /* font-family: 'Barlow', sans-serif; */
 
@@ -46,6 +58,7 @@ body {
   position: relative;
   padding-bottom: 15%;
   min-height: 100vh;
+  background-color: #273878;
 }
 
 h2, h3, h4 {
@@ -218,6 +231,52 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   text-align: center;
   margin-top: 4%;
   text-transform: capitalize;
+}
+/* Header Styles */
+.introduction  {
+  position: relative;
+  height: 80vh;
+  width: 100%; 
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bubble {
+  height: 100%;
+  width: 100%;
+}
+
+.openingText {
+  position: absolute;
+  top: 13vh;
+  left: 15%;
+  font-size: 1.5rem;
+  color: #273878;
+  width: 70%;
+}
+
+.openingText p {
+    padding-bottom: 20px;
+}
+
+
+/* Pokemon Selection Styles */
+.pokemonSuggestion {
+  display: flex;
+}
+
+.pokemonSuggestion img {
+  max-width: 80%;
+}
+
+.textAndButton {
+  margin-top: 125px;
+}
+
+.textAndButton p {
+  font-size: 1.4rem;
 }
 
 
