@@ -142,7 +142,8 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   color: #FFF799;
 }
 /* maybe need to move this to general since it;'s also for the caseButtons */
-.viewCasesButton, .caseButton {
+.viewCasesButton, .caseButton,
+.pokemonButton {
   display: inline-block;
   margin-top: 2%;
   padding: 2% 3.5%;
@@ -157,11 +158,33 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   /* box shadow */
   box-shadow: 2px 3px;
 }
+/* .pokemonButton a {
+  text-decoration: none;
+  color: #F5e000;
+;
+ 
+}
+.pokemonButton a:hover, 
+.pokemonButton a:focus {
+  background-color: #F5e000;
+  color: #273878;
+} */
+
 .viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
   background-color: #F5e000;
   /* background-color: #d5c300; */
   color: #273878;
   border: 3px solid #273878;
+}
+
+.pokemonButton:hover, .pokemonButton:focus {
+  background-color: #F5e000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+.buttonText{
+  padding-bottom: 20px;
 }
 
 /* CrimeFiles styles */
@@ -232,39 +255,61 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   margin-top: 4%;
   text-transform: capitalize;
 }
+.loadingStyle{
+  color: #F5e000;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.2 rem;
+}
+span{
+  text-transform: capitalize;
+}
 /* Header Styles */
 .introduction  {
-  position: relative;
-  height: 80vh;
-  width: 100%; 
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+.bubble{
+  max-width: 25%;
+  padding-right: 20px;
 }
 
-.bubble {
-  height: 100%;
-  width: 100%;
-}
 
 .openingText {
-  position: absolute;
-  top: 13vh;
-  left: 15%;
-  font-size: 1.5rem;
-  color: #273878;
-  width: 70%;
+    background-color: #E7EEF3;
+    padding: 5% 2%;
+    border-radius: 30px;
+    margin-top: 5%;
 }
 
 .openingText p {
     padding-bottom: 20px;
 }
 
+/* Results Styles */
+.results {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.results p {
+  font-size: 2rem;
+  padding-bottom: 50px;
+}
+
 
 /* Pokemon Selection Styles */
 .pokemonSuggestion {
   display: flex;
+    background-color: #E7EEF3;
+    /* padding: 5% 2%; */
+    border-radius: 30px;
+    margin-top: 5%;
 }
 
 .pokemonSuggestion img {
@@ -272,7 +317,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 }
 
 .textAndButton {
-  margin-top: 125px;
+  margin-top: 10%;
 }
 
 .textAndButton p {
