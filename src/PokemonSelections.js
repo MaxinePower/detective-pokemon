@@ -38,7 +38,7 @@ function PokemonSelections(props) {
     }, [props.selectedCrime]);
 
     if (isLoading) {
-        return <div className="App">Loading...</div>;
+        return <div className="App loadingStyle">Loading...</div>;
     }
 
     return (
