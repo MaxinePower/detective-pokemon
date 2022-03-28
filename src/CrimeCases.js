@@ -40,7 +40,7 @@ function CrimeCases(props) {
 
     return(
         <section className="crimeCases">
-            <h2>Your Cases</h2>
+            <h2 id="crimeCases">Your Cases</h2>
             <ul>
                 <form action="">
                     <fieldset onChange={handleCaseChange}>
