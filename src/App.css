@@ -107,14 +107,14 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   font-weight: 500;
 }
 .userInputContainers select {
-  background-image: url(../assets/magnifying-glass-location-solid.svg);
+  background-image: url(./assets/magnifying-glass-location-solid.svg);
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 1rem;
   transition: 2s;
 }
 .userInputContainers select:hover, .userInputContainers select:focus {
-  background-image: url(../assets/magnifying-glass-location-solid-psuedo.svg);
+  background-image: url(./assets/magnifying-glass-location-solid-psuedo.svg);
 }
 
 .userInputContainers select, .userInputContainers input {
@@ -191,7 +191,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   flex-wrap: wrap;
   justify-content: space-evenly;
   border: 10px solid #524c39;
-  background-image: url(../assets/crime-case-background.jpg);
+  background-image: url(./assets/crime-case-background.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   box-shadow: 3px 5px 2px rgb(118, 118, 118);
@@ -202,7 +202,12 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 .crimeCases input[type=radio] {
   display: none;
 }
-
+/* maybe adjust in the future but for now the checked case keep sthe inverted button */
+.crimeCases input[type=radio]:checked + .caseButton {
+  background-color: #F5e000;
+  color: #273878;
+  border: 3px solid #273878;
+}
 .caseFile {
   width: calc((100% / 3) - 2%);
   background-color: #FFF799;
@@ -295,6 +300,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 footer a {
@@ -326,10 +332,22 @@ footer a:focus {
   .userInputContainers {
     width: 98%;
   }
+  body {
+    padding-bottom: 20%;
+  }
 }
 @media (max-width:600px) {
   .caseFile {
     width: 98%;
     padding: 7%;
+  }
+  body {
+    padding-bottom: 30%;
+  }
+}
+@media (max-width:450px) {
+  /* h1 fz decrease maybe? */
+  body {
+    padding-bottom: 45%;
   }
 }
