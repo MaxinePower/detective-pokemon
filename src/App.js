@@ -19,7 +19,9 @@ function App() {
     <>
       <div className = 'wrapper'>
         <Header />
+
         <Introduction />
+
         <UserInfo
           updateUserName={setUserName}
           currentUserName={userName}
@@ -31,9 +33,11 @@ function App() {
           ? <PokemonSelections selectedCrime={chosenCrimeType} setPType={setPType} />
           : null
         }
-        <Results 
-          crimeType={chosenCrimeType}
-          pokiType={pType}
+
+        <Results
+        crimeCaseNumber={chosenCaseNum}
+        crimeType={chosenCrimeType}
+        pokiType={pType}
         />
       </div>
         <Footer />
