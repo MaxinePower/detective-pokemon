@@ -111,6 +111,10 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 1rem;
+  transition: 2s;
+}
+.userInputContainers select:hover, .userInputContainers select:focus {
+  background-image: url(../assets/magnifying-glass-location-solid-psuedo.svg);
 }
 
 .userInputContainers select, .userInputContainers input {
@@ -305,4 +309,22 @@ footer a:focus {
 
 .portfolioLinks {
   margin-top: 5px;
+}
+
+
+/* media queries */
+@media (max-width:1000px) {
+  .caseFile {
+    width: 48%;
+  }
+  .userInputContainers select {
+    background-size: 0.8rem;
+  }
+}
+
+@media (max-width:600px) {
+  .caseFile {
+    width: 98%;
+    padding: 7%;
+  }
 }

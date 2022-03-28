@@ -14,7 +14,7 @@ function App() {
   // State for chosen crime
   const [chosenCrimeType, setChosenCrimeType] = useState('');
   const [chosenCaseNum, setChosenCaseNum] = useState('');
-  const [pType, setPType] = useState("");
+  const [pType, setPType] = useState('');
 
   return (
     <>
@@ -38,10 +38,14 @@ function App() {
           ? <PokemonSelections selectedCrime={chosenCrimeType} setPType={setPType} />
           : null
         }
-        <Results 
-        crimeType={chosenCrimeType}
-        pokiType={pType}
-        />
+        {
+          pType !== ""
+          ? <Results 
+          crimeType={chosenCrimeType}
+          pokiType={pType}
+          />
+          : null
+        }
       </div>
         <Footer />
     </>

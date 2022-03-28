@@ -25,7 +25,7 @@ function InvestigationAlgorithm(props) {
     console.log(iResult);
     return (
         <div>
-            <p>{iResult}</p>
+            <p>deafhwserth{iResult}</p>
         </div>
     );
 };

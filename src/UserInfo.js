@@ -81,8 +81,6 @@ function UserInfo(props) {
                             <option value="1080958">Cardiff, Wales</option>
                             <option value="1489701">Edinburgh, Scotland</option>
                             <option value="1296059">Leeds, West Yorkshire</option>
-
-
                         </select>
                         {/* Form error handling */}
                         {
@@ -91,7 +89,6 @@ function UserInfo(props) {
                             : <span className="errorFlag hidden">Please choose a location.</span>
                         }
                     </div>
-
                     <button type="submit" className="viewCasesButton">View Your Cases</button>
                 </form>
             </section>
