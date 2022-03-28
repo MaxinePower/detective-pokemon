@@ -107,27 +107,32 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   font-weight: 500;
 }
 .userInputContainers select {
-  background-image: url(../assets/magnifying-glass-location-solid.svg);
+  background-image: url(./assets/magnifying-glass-location-solid.svg);
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 1rem;
+  transition: 2s;
+}
+.userInputContainers select:hover, .userInputContainers select:focus {
+  background-image: url(./assets/magnifying-glass-location-solid-psuedo.svg);
 }
 
 .userInputContainers select, .userInputContainers input {
   appearance: none;
   display: block;
-  color: #273878;
+  color: #273978;
   padding: 2% 5%;
   border: 3px solid #273878;
   border-radius: 30px;
   width: 100%;
-  background-color: #FFF799;
+  background-color: #f5e000;
   font-weight: 600;
   letter-spacing: 1px;
   transition: 0.2s;
 }
 .userInputContainers input::placeholder {
-  color: #273878;
+  /* updated text colour check with group */
+  color: #273978c0;
   transition: 0.2s;
 }
 .userInputContainers option {
@@ -135,11 +140,11 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   line-height: 1.2rem;
 }
 .userInputContainers select:hover,.userInputContainers select:focus, .userInputContainers input:hover, .userInputContainers input:focus {
-  color: #FFF799;
+  color: #f5e000;
   background-color: #273878;
 }
 .userInputContainers input:focus::placeholder, .userInputContainers input:hover::placeholder {
-  color: #FFF799;
+  color: #f5e000;
 }
 /* maybe need to move this to general since it;'s also for the caseButtons */
 .viewCasesButton, .caseButton,
@@ -209,7 +214,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   flex-wrap: wrap;
   justify-content: space-evenly;
   border: 10px solid #524c39;
-  background-image: url(../assets/crime-case-background.jpg);
+  background-image: url(./assets/crime-case-background.jpg);
   background-size:cover;
   background-repeat: no-repeat;
   box-shadow: 3px 5px 2px rgb(118, 118, 118);
@@ -220,7 +225,12 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 .crimeCases input[type=radio] {
   display: none;
 }
-
+/* maybe adjust in the future but for now the checked case keep sthe inverted button */
+.crimeCases input[type=radio]:checked + .caseButton {
+  background-color: #F5e000;
+  color: #273878;
+  border: 3px solid #273878;
+}
 .caseFile {
   width: calc((100% / 3) - 2%);
   background-color: #FFF799;
@@ -335,6 +345,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  font-size: 0.8rem;
 }
 
 footer a {
@@ -350,4 +361,38 @@ footer a:focus {
 
 .portfolioLinks {
   margin-top: 5px;
+}
+
+
+/* media queries */
+@media (max-width:1000px) {
+  .caseFile {
+    width: 48%;
+  }
+}
+@media (max-width:800px) {
+  .userInfo form {
+    flex-direction: column;
+  }
+  .userInputContainers {
+    width: 98%;
+  }
+  body {
+    padding-bottom: 20%;
+  }
+}
+@media (max-width:600px) {
+  .caseFile {
+    width: 98%;
+    padding: 7%;
+  }
+  body {
+    padding-bottom: 30%;
+  }
+}
+@media (max-width:450px) {
+  /* h1 fz decrease maybe? */
+  body {
+    padding-bottom: 45%;
+  }
 }
