@@ -7,16 +7,14 @@ function InvestigationAlgorithm(props) {
     const refreshPage = () => {
         window.location.reload();
     }
-
     let iResult = '';
-
     // checking for != '' will stop the algorithm from doing all the checks
     if (props.crimeType !== '' && props.pType !== '') {
         const crimeTypesInvestigationData = investigationData[props.crimeType];
         const willUserLose = crimeTypesInvestigationData.includes(props.pType);
         // checking for if the pTypes in the array for the crimeType matches the users chosen pokemon type
         if (willUserLose) {
-            iResult = "Better luck next time! Your Pokemon wasn't the right type to solve this crime.";
+            iResult = "Better luck next time! Your Pokémon wasn't the right type to solve this crime.";
             return (
                 <div className='results'>
                     <p>{iResult}</p>
@@ -24,7 +22,7 @@ function InvestigationAlgorithm(props) {
                 </div>
             );
         } else {
-            iResult = 'Congratulations! You solved the case!';
+            iResult = 'Congratulations! You solved the case because this Pokémon is great against this crime type!';
             return (
                 <div className='results'>
                     <p>{iResult}</p>
@@ -33,9 +31,9 @@ function InvestigationAlgorithm(props) {
             );
         }
     }
+    // mysterious return
     return (
-        <div>
-        </div>
+        <></>
     );
 };
 

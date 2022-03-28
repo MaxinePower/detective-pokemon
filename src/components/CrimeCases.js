@@ -12,6 +12,7 @@ function CrimeCases(props) {
             axios({
                 url: 'https://data.police.uk/api/crimes-at-location',
                 params: {
+                    // date to test for errors
                     // date: "2021-08",
                     location_id: props.currentChosenLocation
                 }
@@ -23,8 +24,7 @@ function CrimeCases(props) {
                 } else {
                     throw new Error("The API response didn't return the data we were looking for. Please try again later.");
                 }
-            }).catch(function(error) {
-                // console.log(error);
+            }).catch(function() {
                 alert("Your request can't be completed, check the console for more detail.")
             });
         } 
@@ -32,7 +32,6 @@ function CrimeCases(props) {
     }, [props.currentChosenLocation])
 
     const handleCaseChange = (e) => {
-        // stretch goal is displaying the case in the other components
         // chosen crime gets stored in state/is updated a state thats higher up in the level (App.js)
         props.updateChosenCrimeType(e.target.value);
         props.updateChosenCaseNum(e.target.id);

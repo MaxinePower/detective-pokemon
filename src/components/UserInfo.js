@@ -66,7 +66,6 @@ function UserInfo(props) {
                         <select
                         name="locationDropDown"
                         id="locationDropDown"
-                        // trying an inline callback function for event listener
                         onChange={handleLocationChange}
                         defaultValue='placeholder'
                         >

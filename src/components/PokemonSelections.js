@@ -33,7 +33,6 @@ function PokemonSelections(props) {
             .catch(() => { console.log("error") })
         }
         setPokemon(newState);
-        // console.log(newState);
 
     }, [props.selectedCrime]);
 

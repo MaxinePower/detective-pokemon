@@ -27,8 +27,70 @@ ul {
   list-style: none;
 }
 
+/* button stuff */
+.viewCasesButton, .caseButton,
+.pokemonButton {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 2% 3.5%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #273878;
+  border: 3px solid #273878;
+  color: #F5e000;
+  /* color: #d5c300; */
+  border-radius: 30px;
+  transition: 0.2s;
+  /* box shadow */
+  box-shadow: 2px 3px;
+}
+/* .pokemonButton a {
+  text-decoration: none;
+  color: #F5e000;
+
+}
+.pokemonButton a:hover, 
+.pokemonButton a:focus {
+  background-color: #F5e000;
+  color: #273878;
+} */
+
+.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
+  background-color: #F5e000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+
+.pokemonButton:hover, .pokemonButton:focus {
+  background-color: #F5e000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+.buttonText{
+  padding-bottom: 20px;
+}
+
 /* FONTS */
-/* Header */
+/* Body/Paragraph */
+/* font-family: 'Barlow', sans-serif; */
+
+/* SITE COLOURS */
+/* yellow: #f5e000 */
+/* dark blue: #273878 */
+/* pale blue: #c7eef3 */
+
+/* Font Styles */
+body {
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 15%;
+  min-height: 100vh;
+  background-color: #273878;
+}
+
+/* Header fonts */
 h1 {
   font-family: 'Iceberg', cursive;
   font-size: 5rem;
@@ -39,26 +101,6 @@ h1 {
   /* -webkit-text-stroke-width: 1px; */
   /* -webkit-text-stroke-color: #273878; */
     /* -webkit-text-stroke-color: #F5E000; */
-
-}
-
-/* Body/Paragraph */
-  /* font-family: 'Barlow', sans-serif; */
-
-/* SITE COLOURS */
-  /* yellow: #D5C300 */
-  /* dark blue: #273878 */
-  /* pastel green: #E5FECC */
-  /* lemon yellow crayola: #FFF799 */
-
-/* Font Styles */
-
-body {
-  font-size: 1rem;
-  position: relative;
-  padding-bottom: 15%;
-  min-height: 100vh;
-  background-color: #273878;
 }
 
 h2, h3, h4 {
@@ -69,8 +111,30 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   font-family: 'Barlow', sans-serif;
 }
 
-/* Error Flag on UserInfo component */
+/* Introduction Styles */
+.introduction {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
 
+}
+.introImg {
+  max-width: 25%;
+  padding-right: 20px;
+}
+
+.openingText {
+    background-color: #E7EEF3;
+    padding: 5% 2%;
+    border-radius: 30px;
+    margin-top: 5%;
+}
+
+.openingText p {
+    padding-bottom: 20px;
+}
+
+/* Error Flag on UserInfo component */
 .errorFlag{
   color: red;
   font-family: 'Barlow', sans-serif;
@@ -146,54 +210,8 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 .userInputContainers input:focus::placeholder, .userInputContainers input:hover::placeholder {
   color: #f5e000;
 }
-/* maybe need to move this to general since it;'s also for the caseButtons */
-.viewCasesButton, .caseButton,
-.pokemonButton {
-  display: inline-block;
-  margin-top: 2%;
-  padding: 2% 3.5%;
-  font-weight: 600;
-  letter-spacing: 1px;
-  background-color: #273878;
-  border: 3px solid #273878;
-  color: #F5e000;
-  /* color: #d5c300; */
-  border-radius: 30px;
-  transition: 0.2s;
-  /* box shadow */
-  box-shadow: 2px 3px;
-}
-/* .pokemonButton a {
-  text-decoration: none;
-  color: #F5e000;
-;
- 
-}
-.pokemonButton a:hover, 
-.pokemonButton a:focus {
-  background-color: #F5e000;
-  color: #273878;
-} */
-
-.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
-  background-color: #F5e000;
-  /* background-color: #d5c300; */
-  color: #273878;
-  border: 3px solid #273878;
-}
-
-.pokemonButton:hover, .pokemonButton:focus {
-  background-color: #F5e000;
-  /* background-color: #d5c300; */
-  color: #273878;
-  border: 3px solid #273878;
-}
-.buttonText{
-  padding-bottom: 20px;
-}
 
 /* CrimeFiles styles */
-
 .crimeCases {
   background-color: #E7EEF3;
   padding: 5% 2%;
@@ -265,55 +283,19 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   margin-top: 4%;
   text-transform: capitalize;
 }
+/* -------------potential loading animation styling(return to)----------------- */
 .loadingStyle{
   color: #F5e000;
   text-align: center;
   padding: 20px 0;
-  font-size: 1.2 rem;
+  font-size: 1.2rem;
 }
+
+/* Pokemon Selection Styles */
 span{
   text-transform: capitalize;
 }
-/* Header Styles */
-.introduction  {
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
 
-}
-.bubble{
-  max-width: 25%;
-  padding-right: 20px;
-}
-
-
-.openingText {
-    background-color: #E7EEF3;
-    padding: 5% 2%;
-    border-radius: 30px;
-    margin-top: 5%;
-}
-
-.openingText p {
-    padding-bottom: 20px;
-}
-
-/* Results Styles */
-.results {
-  background-color: #E7EEF3;
-  padding: 5% 2%;
-  border-radius: 30px;
-  margin-top: 5%;
-  text-align: center;
-}
-
-.results p {
-  font-size: 2rem;
-  padding-bottom: 50px;
-}
-
-
-/* Pokemon Selection Styles */
 .pokemonSuggestion {
   display: flex;
     background-color: #E7EEF3;
@@ -334,9 +316,21 @@ span{
   font-size: 1.4rem;
 }
 
+/* Results Styles */
+.results {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.results p {
+  font-size: 2rem;
+  padding-bottom: 50px;
+}
 
 /* Footer Styles */
-
 footer {
   background-color: #273878;
   color: #FFF;
@@ -364,7 +358,7 @@ footer a:focus {
 }
 
 
-/* media queries */
+/* ------media queries---------- */
 @media (max-width:1000px) {
   .caseFile {
     width: 48%;
