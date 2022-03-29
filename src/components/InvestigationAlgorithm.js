@@ -14,7 +14,7 @@ function InvestigationAlgorithm(props) {
         const willUserLose = crimeTypesInvestigationData.includes(props.pType);
         // checking for if the pTypes in the array for the crimeType matches the users chosen pokemon type
         if (willUserLose) {
-            iResult = "Better luck next time! Your Pokémon wasn't the right type to solve this crime.";
+            iResult = `Better luck next time ${props.detectiveName}! Your Pokémon wasn't the right type to solve this crime.`;
             return (
                 <div className='results'>
                     <p>{iResult}</p>
@@ -22,7 +22,7 @@ function InvestigationAlgorithm(props) {
                 </div>
             );
         } else {
-            iResult = 'Congratulations! You solved the case because this Pokémon is great against this crime type!';
+            iResult = `Congratulations Detective ${props.detectiveName}! You solved the case because this Pokémon is great against this crime type!`;
             return (
                 <div className='results'>
                     <p>{iResult}</p>

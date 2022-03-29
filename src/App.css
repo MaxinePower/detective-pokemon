@@ -44,16 +44,16 @@ ul {
   /* box shadow */
   box-shadow: 2px 3px;
 }
-/* .pokemonButton a {
+.pokemonButton a {
   text-decoration: none;
   color: #F5e000;
 
 }
 .pokemonButton a:hover, 
 .pokemonButton a:focus {
-  background-color: #F5e000;
+  /* background-color: #F5e000; */
   color: #273878;
-} */
+}
 
 .viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
   background-color: #F5e000;
@@ -71,6 +71,11 @@ ul {
 .buttonText{
   padding-bottom: 20px;
 }
+
+.openingText, .userInfo, .crimeCases, .pokemonSuggestion, .results {
+  box-shadow: 5px 5px 2px #0d0d71;
+  border: 5px solid #F5E000;
+} 
 
 /* FONTS */
 /* Body/Paragraph */
@@ -129,9 +134,13 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
     border-radius: 30px;
     margin-top: 5%;
 }
+.giveName{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
 
 .openingText p {
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 }
 
 /* Error Flag on UserInfo component */
@@ -307,6 +316,16 @@ span{
 .pokemonSuggestion img {
   max-width: 80%;
 }
+.choosePokemonMessage{
+text-align: center;
+font-size: 2.75rem;
+letter-spacing: 1px;
+color: #273878;
+background-color: #E7EEF3;
+padding: 5% 2%;
+border-radius: 30px;
+margin-top: 5%;
+}
 
 .textAndButton {
   margin-top: 10%;
@@ -314,6 +333,7 @@ span{
 
 .textAndButton p {
   font-size: 1.4rem;
+  padding-bottom: 2%;
 }
 
 /* Results Styles */
@@ -363,6 +383,15 @@ footer a:focus {
   .caseFile {
     width: 48%;
   }
+  .introImg {
+  max-width: 30%;
+}
+.openingText p{
+  font-size: 0.9rem;
+}
+ .textAndButton {
+    margin: 5%;
+  }
 }
 @media (max-width:800px) {
   .userInfo form {
@@ -374,6 +403,39 @@ footer a:focus {
   body {
     padding-bottom: 20%;
   }
+  .pokemonSuggestion {
+    flex-direction: column;
+    padding: 50px;
+    text-align: center;
+  }
+  .textAndButton p {
+    text-align: left;
+  }
+}
+@media (max-width:771px){
+  introImg {
+  max-width: 38%;
+}
+.openingText p {
+  padding-bottom: 9px;
+}
+}
+@media (max-width:700px){
+  .openingText {
+  padding: 1% 2%;
+  margin-top: 1%;
+}
+.openingText p {
+  padding-bottom: 12px;
+}
+}
+@media (max-width:635px){
+.introImg {
+  max-width: 39%;
+}
+.openingText p {
+  padding-bottom: 10px;
+}
 }
 @media (max-width:600px) {
   .caseFile {
@@ -384,9 +446,100 @@ footer a:focus {
     padding-bottom: 30%;
   }
 }
+@media (max-width:572px) {
+  .introduction {
+  display: block;
+}
+.introImg {
+  max-width: 40%;
+  padding-bottom:10px;
+}
+.openingText p {
+  padding-bottom: 12px;
+}
+.openingText {
+  padding: 4% 2%;
+  margin-top: 1%;
+}
+h1{
+  font-size: 4.5rem;
+}
+}
+@media (max-width:572px) {
+  h1{
+    font-size: 4rem;
+  }
+  .openingText {
+  padding: 4% 4%;
+}
+.introduction {
+  padding: 1% 7%;
+}
+}
+@media (max-width:565px) {
+  .introImg {
+  max-width: 45%;
+  padding-bottom: 10px;
+}
+}
+@media (max-width:458px) {
+  .introImg {
+  max-width: 48%;
+  padding-bottom: 10px;
+}
+}
+@media (max-width:500px) {
+.pokemonSuggestion img {
+  max-width: 60%;
+}
+.textAndButton p {
+  font-size: 1.1rem;
+}
+}
+@media (max-width:458px) {
+  .introImg {
+  max-width: 48%;
+  padding-bottom: 10px;
+}
+}
 @media (max-width:450px) {
   /* h1 fz decrease maybe? */
   body {
     padding-bottom: 45%;
   }
+}
+@media (max-width:396px) {
+ h1 {
+  font-size: 3.7rem;
+}
+}
+@media (max-width:374px) {
+  .introImg {
+  max-width: 56%;
+}
+h1 {
+  font-size: 3.4rem;
+}
+}
+@media (max-width:345px) {
+
+h1 {
+  font-size: 3.2rem;
+}
+.openingText {
+  padding: 4% 9%;
+}
+.openingText p {
+  padding-bottom: 10px;
+}
+}
+
+@media (max-width:320px) {
+h1 {
+  font-size: 3.1rem;
+}
+.openingText p {
+  padding-bottom: 7px;
+}
+
 }
