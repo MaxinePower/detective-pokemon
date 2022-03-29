@@ -38,6 +38,7 @@ function App() {
         crimeCaseNumber={chosenCaseNum}
         crimeType={chosenCrimeType}
         pokiType={pType}
+        detectiveName={userName}
         />
       </div>
         <Footer />

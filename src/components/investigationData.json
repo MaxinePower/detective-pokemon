@@ -21,7 +21,7 @@
     ],
     "drugs": [
         "grass",
-        "fair"
+        "fairy"
     ],
     "other-theft": [
         "normal",
@@ -60,7 +60,7 @@
         "psychic",
         "dark"
     ],
-    "violence-and-sexual-offences": [
+    "violent-crime": [
         "psychic",
         "ghost"
     ],

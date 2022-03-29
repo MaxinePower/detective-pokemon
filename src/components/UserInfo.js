@@ -47,7 +47,7 @@ function UserInfo(props) {
                 {/* user inputs name into input field */}
                 {/* save this input in a variable and also bind it to the input (controlled inputs) */}
                     <div className="userInputContainers">
-                        <label htmlFor="userName">Officer Name:</label>
+                        <label htmlFor="userName">Detective Name:</label>
                         <input type="text" name="userName" id="userName" placeholder="Joshua Doe"
                         onChange={handleNameChange}
                         value={changingUserName}

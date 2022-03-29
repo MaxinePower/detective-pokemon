@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 function CrimeCases(props) {
     const [crimeArray, setCrimeArray] = useState([]);
+    const [crimeLoading, setCrimeLoading] = useState(true);
+
     // useEffect
     useEffect(() => {
         if (props.currentChosenLocation !== "") {
@@ -17,10 +19,12 @@ function CrimeCases(props) {
                     location_id: props.currentChosenLocation
                 }
             }).then((policeApiResult) => {
+                setCrimeLoading(true);
                 if (policeApiResult.status === 200) {
                     // save the returned data in state
                     const locationResults = policeApiResult.data;
                     setCrimeArray(locationResults);
+                    setCrimeLoading(false);
                 } else {
                     throw new Error("The API response didn't return the data we were looking for. Please try again later.");
                 }
@@ -40,12 +44,18 @@ function CrimeCases(props) {
     return(
         <section className="crimeCases">
             <h2 id="crimeCases">Your Cases</h2>
+            <p className="instruction">Select an active case from the files below.</p>
             <ul>
                 <form action="">
                     <fieldset onChange={handleCaseChange}>
                     {/* Map through the returned crimes-at-location data from API and return crimeFile for each case (from category property) */}
                     {/* -----return crimeFile component (from map)------
                     through props display the crime type and other data */}
+                    {
+                        crimeLoading
+                        ? <p>Loading Cases</p>
+                        : null
+                    }   
                     {
                         crimeArray.length > 0 ? crimeArray.map((individualCrime) => {
                             return <CrimeFile typeOfCrime={individualCrime.category} key={individualCrime.id} caseID={individualCrime.id} locationName={individualCrime.location.street.name}
