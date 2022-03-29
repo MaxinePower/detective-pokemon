@@ -7,6 +7,7 @@ function Results(props) {
             <InvestigationAlgorithm
                 crimeType={props.crimeType}
                 pType={props.pokiType}
+                detectiveName={props.detectiveName}
             />
         </section>
     );

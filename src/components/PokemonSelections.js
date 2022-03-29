@@ -42,10 +42,13 @@ function PokemonSelections(props) {
 
     return (
         <section>
+            <h2 className="choosePokemonMessage">Choose Your Pokémon Partner
+            </h2>
             <ul>
                 {
                     pokemon.map((individualPokemon) => {
                         return (
+                            
                             <PokemonCard
                                 setPType = {props.setPType}
                                 key={individualPokemon.key}
