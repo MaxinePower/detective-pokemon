@@ -72,7 +72,7 @@ ul {
   padding-bottom: 20px;
 }
 
-.openingText, .userInfo, .crimeCases, .pokemonSuggestion, .results {
+.openingText, .userInfo, .crimeCases, .pokemonSuggestion, .results, .choosePokemonMessage {
   box-shadow: 7px 7px 10px #0d0d71;
   border: 5px solid #f5e100ba;
 }
