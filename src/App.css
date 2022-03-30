@@ -27,6 +27,10 @@ ul {
   list-style: none;
 }
 
+.introduction img {
+  max-width: 100%;
+}
+
 /* button stuff */
 .viewCasesButton, .caseButton,
 .pokemonButton {
@@ -55,20 +59,14 @@ ul {
   color: #273878;
 }
 
-.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus {
+.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus, .pokemonButton:hover, .pokemonButton:focus {
   background-color: #F5e000;
   /* background-color: #d5c300; */
   color: #273878;
   border: 3px solid #273878;
 }
 
-.pokemonButton:hover, .pokemonButton:focus {
-  background-color: #F5e000;
-  /* background-color: #d5c300; */
-  color: #273878;
-  border: 3px solid #273878;
-}
-.buttonText{
+.buttonText {
   padding-bottom: 20px;
 }
 
@@ -117,7 +115,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
-  
+  align-items: center;
 }
 .introImg {
   max-width: 25%;
@@ -128,7 +126,6 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
   background-color: #E7EEF3;
   padding: 5% 2%;
   border-radius: 30px;
-  margin-top: 5%;
 }
 .giveName{
   font-weight: bold;
@@ -388,12 +385,12 @@ footer a:focus {
     width: 48%;
   }
   .introImg {
-  max-width: 30%;
-}
-.openingText p{
-  font-size: 0.9rem;
-}
- .textAndButton {
+    max-width: 30%;
+  }
+  .openingText p {
+    font-size: 0.9rem;
+  }
+  .textAndButton {
     margin: 5%;
   }
 }
@@ -403,45 +400,53 @@ footer a:focus {
   }
   .userInputContainers {
     width: 98%;
+    margin-bottom: 3%;
   }
   body {
     padding-bottom: 20%;
   }
   .pokemonSuggestion {
     flex-direction: column;
-    padding: 50px;
+    padding: 5%;
     text-align: center;
   }
   .textAndButton p {
     text-align: left;
   }
+  .pokemonButton {
+    margin-top: 5%;
+  }
 }
 @media (max-width:771px){
-  introImg {
-  max-width: 38%;
-}
-.openingText p {
-  padding-bottom: 9px;
-}
+  .introImg {
+    max-width: 38%;
+  }
+  .openingText p {
+    padding-bottom: 9px;
+  }
 }
 @media (max-width:700px){
   .openingText {
-  padding: 1% 2%;
-  margin-top: 1%;
-}
-.openingText p {
-  padding-bottom: 12px;
-}
+    padding: 4% 4%;
+    margin-top: 1%;
+  }
+  .openingText p {
+    padding-bottom: 12px;
+  }
 }
 @media (max-width:635px){
-.introImg {
-  max-width: 39%;
-}
-.openingText p {
-  padding-bottom: 10px;
-}
+  .introImg {
+    max-width: 39%;
+  }
+  .openingText p {
+    padding-bottom: 10px;
+  }
 }
 @media (max-width:600px) {
+  .introduction {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .caseFile {
     width: 98%;
     padding: 7%;
@@ -451,67 +456,39 @@ footer a:focus {
     padding-bottom: 30%;
   }
 }
-@media (max-width:572px) {
-  .introduction {
-  display: block;
-}
-.introImg {
-  max-width: 40%;
-  padding-bottom:10px;
-}
-.openingText p {
-  padding-bottom: 12px;
-}
-.openingText {
-  padding: 4% 2%;
-  margin-top: 1%;
-}
-h1{
-  font-size: 4.5rem;
-}
-}
-@media (max-width:572px) {
-  h1{
+@media (max-width:570px) {
+  .introImg {
+    max-width: 45%;
+    padding-bottom:10px;
+  }
+  .openingText p {
+    padding-bottom: 12px;
+  }
+  h1 {
     font-size: 4rem;
   }
-  .openingText {
-  padding: 4% 4%;
-}
-.introduction {
-  padding: 1% 7%;
-}
-}
-@media (max-width:565px) {
-  .introImg {
-  max-width: 45%;
-  padding-bottom: 10px;
-}
-}
-@media (max-width:458px) {
-  .introImg {
-  max-width: 48%;
-  padding-bottom: 10px;
-}
+  .results p {
+    font-size: 1.3rem;
+    padding: 2% 2%;
+  }
 }
 @media (max-width:500px) {
-.pokemonSuggestion img {
-  max-width: 60%;
+  .pokemonSuggestion img {
+    max-width: 60%;
+  }
+  .textAndButton p {
+    font-size: 1.1rem;
+  }
 }
-.textAndButton p {
-  font-size: 1.1rem;
-}
-}
-@media (max-width:458px) {
-  .introImg {
-  max-width: 48%;
-  padding-bottom: 10px;
-}
-}
-@media (max-width:450px) {
+@media (max-width:460px) {
   body {
     padding-bottom: 45%;
   }
-  .crimeCases h2 {
+  .introImg {
+  max-width: 48%;
+  padding-bottom: 10px;
+  }
+  .crimeCases h2, .choosePokemonMessage h2 {
     font-size: 2.5rem;
   }
   .instruction {
@@ -530,36 +507,26 @@ h1{
   }
 }
 @media (max-width:396px) {
- h1 {
-  font-size: 3.7rem;
+  h1 {
+    font-size: 3.7rem;
   }
 }
 @media (max-width:374px) {
   .introImg {
-  max-width: 56%;
+    max-width: 56%;
   }
   h1 {
     font-size: 3.4rem;
   }
 }
 @media (max-width:345px) {
-
-h1 {
-  font-size: 3.2rem;
-}
-.openingText {
-  padding: 4% 9%;
-}
-.openingText p {
-  padding-bottom: 10px;
-}
-}
-
-@media (max-width:320px) {
-h1 {
-  font-size: 3.1rem;
-}
-.openingText p {
-  padding-bottom: 7px;
-}
+  h1 {
+    font-size: 3.1rem;
+  }
+  .openingText {
+    padding: 4% 9%;
+  }
+  .openingText p {
+    padding-bottom: 8.5px;
+  }
 }

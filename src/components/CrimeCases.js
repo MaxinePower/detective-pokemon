@@ -1,13 +1,19 @@
 // CrimeCases
 import CrimeFile from "./CrimeFile";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function CrimeCases(props) {
     const [crimeArray, setCrimeArray] = useState([]);
     const [crimeLoading, setCrimeLoading] = useState(true);
 
-    // useEffect
+    const crimeRef = useRef(null);
+    useEffect(()=> {
+        if (props.showCrimeCases) {
+            crimeRef.current.scrollIntoView();
+        }
+    }, [props.showCrimeCases]);
+
     useEffect(() => {
         if (props.currentChosenLocation !== "") {
             // Make an axios call to UK Police API using chosenLocation data to retrieve list of crimes in that area
@@ -39,10 +45,11 @@ function CrimeCases(props) {
         // chosen crime gets stored in state/is updated a state thats higher up in the level (App.js)
         props.updateChosenCrimeType(e.target.value);
         props.updateChosenCaseNum(e.target.id);
+        props.pokemonState(true)
     }
 
-    return(
-        <section className="crimeCases">
+    return (
+        <section className="crimeCases" ref={crimeRef}>
             <h2 id="crimeCases">Your Cases</h2>
             <p className="instruction">Select an active case from the files below.</p>
             <ul>
@@ -57,10 +64,12 @@ function CrimeCases(props) {
                         : null
                     }   
                     {
-                        crimeArray.length > 0 ? crimeArray.map((individualCrime) => {
-                            return <CrimeFile typeOfCrime={individualCrime.category} key={individualCrime.id} caseID={individualCrime.id} locationName={individualCrime.location.street.name}
-                            />
-                        }) : <p>no open cases</p>
+                        crimeArray.length > 0
+                        ? crimeArray.map((individualCrime) => {
+                            return <CrimeFile typeOfCrime={individualCrime.category} key={individualCrime.id} caseID={individualCrime.id} locationName={individualCrime.location.street.name} 
+                        />
+                        })
+                        : null
                     }
                     </fieldset>
                 </form>
@@ -68,5 +77,4 @@ function CrimeCases(props) {
         </section>
     )
 };
-
 export default CrimeCases;
