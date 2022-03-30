@@ -1,11 +1,13 @@
 // UserInfo
 import CrimeCases from "./CrimeCases";
 import {useState} from "react";
+
 // UserInfo component (this will contain the CrimeCases component)
 function UserInfo(props) {
     const [changingUserName, setChangingUsername] = useState('');
     const [maybeChosenLocation, setMaybeChosenLocation] = useState('placeholder');
     const [chosenLocation, setChosenLocation] = useState('');
+    const [showCrimeCases, setShowCrimeCases] = useState(false);
 
     // Error handling for form - states to store the error status
     const [locationErrorStatus, setLocationErrorStatus] = useState(false);
@@ -19,7 +21,6 @@ function UserInfo(props) {
     }
     const handleUserInfoSubmit = (e) => {
         e.preventDefault();
-
         // resets the error status back to false
         setLocationErrorStatus(false)
         setNameErrorStatus(false)
@@ -28,6 +29,7 @@ function UserInfo(props) {
         if (maybeChosenLocation !== "placeholder" && changingUserName !== "") {
             props.updateUserName(changingUserName);
             setChosenLocation(maybeChosenLocation);
+            setShowCrimeCases(true)
         } else if (changingUserName === "" && maybeChosenLocation === "placeholder") {
             // alert("please enter your name and choose a location!")
             setLocationErrorStatus(true)
@@ -49,8 +51,8 @@ function UserInfo(props) {
                     <div className="userInputContainers">
                         <label htmlFor="userName">Detective Name:</label>
                         <input type="text" name="userName" id="userName" placeholder="Joshua Doe"
-                        onChange={handleNameChange}
-                        value={changingUserName}
+                            onChange={handleNameChange}
+                            value={changingUserName}
                         />
 
                         {/* Form error handling */}
@@ -64,10 +66,10 @@ function UserInfo(props) {
                         {/* user selects a location from a drop down menu */}
                         <label htmlFor="locationDropDown">Select Location:</label>
                         <select
-                        name="locationDropDown"
-                        id="locationDropDown"
-                        onChange={handleLocationChange}
-                        defaultValue='placeholder'
+                            name="locationDropDown"
+                            id="locationDropDown"
+                            onChange={handleLocationChange}
+                            defaultValue='placeholder'
                         >
                             <option value="placeholder" disabled>Pick one:</option>
                             <option value="960157">Abbey Road, London</option>
@@ -88,22 +90,21 @@ function UserInfo(props) {
                             : <span className="errorFlag hidden">Please choose a location.</span>
                         }
                     </div>
-                    {/* <Link to='/#skills'> */}
-                        <button type="submit" className="viewCasesButton">View Your Cases</button>
-                    {/* </Link> */}
+                    <button type="submit"  className="viewCasesButton">View Your Cases</button>
                 </form>
             </section>
-            {
-                chosenLocation !== ""  
-                ? <CrimeCases 
-                    currentChosenLocation={chosenLocation}
-                    updateChosenCrimeType={props.updateChosenCrimeType}
-                    updateChosenCaseNum={props.updateChosenCaseNum}
-                />
-                : null
-            }
+                {
+                    chosenLocation !== ""  
+                    ? <CrimeCases
+                        showCrimeCases={showCrimeCases}
+                        currentChosenLocation={chosenLocation}
+                        updateChosenCrimeType={props.updateChosenCrimeType}
+                        updateChosenCaseNum={props.updateChosenCaseNum}
+                        pokemonState={props.pokemonState}
+                    />
+                    : null
+                }
         </>
     );
 }
-
 export default UserInfo;

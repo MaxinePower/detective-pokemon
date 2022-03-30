@@ -12,5 +12,4 @@ function CrimeFile(props) {
         </li>
     )
 };
-
 export default CrimeFile;

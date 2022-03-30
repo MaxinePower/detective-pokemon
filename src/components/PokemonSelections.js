@@ -3,16 +3,17 @@ import PokemonCard from "./PokemonCard";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-
 function PokemonSelections(props) {
     const [pokemon, setPokemon] = useState([]);
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        let newState = [...pokemon];
-        
-        for (let i = 0; i < 5; i++) {
+        let newState = [];
+        // This was in original code but we left it for reference
+            // It caused appending issues in the pokemon selection, it appends 5 more pokemon with click of radio buttons in previous section
+        // let newState = [...pokemon];
 
+        for (let i = 0; i < 5; i++) {
             // Generate random pokemon id number
             let id = Math.floor(Math.random() * (898 - 1)) + 1;
 
@@ -33,7 +34,6 @@ function PokemonSelections(props) {
             .catch(() => { console.log("error") })
         }
         setPokemon(newState);
-
     }, [props.selectedCrime]);
 
     if (isLoading) {
@@ -42,19 +42,18 @@ function PokemonSelections(props) {
 
     return (
         <section>
-            <h2 className="choosePokemonMessage">Choose Your Pokémon Partner
-            </h2>
+            <h2 className="choosePokemonMessage">Choose Your Pokémon Partner</h2>
             <ul>
                 {
                     pokemon.map((individualPokemon) => {
                         return (
-                            
                             <PokemonCard
                                 setPType = {props.setPType}
                                 key={individualPokemon.key}
                                 name={individualPokemon.name}
                                 type={individualPokemon.type}
                                 pokeImg={individualPokemon.pokeImg}
+                                resultsState={props.showResultsSectionState}
                             />
                         )
                     })
@@ -63,5 +62,4 @@ function PokemonSelections(props) {
         </section>
     );
 };
-
 export default PokemonSelections;
