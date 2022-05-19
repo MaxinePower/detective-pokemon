@@ -1,38 +1,532 @@
-.App {
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/* Base Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 125%;
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.introduction img {
+  max-width: 100%;
+}
+
+/* button stuff */
+.viewCasesButton, .caseButton,
+.pokemonButton {
+  display: inline-block;
+  margin-top: 2%;
+  padding: 2% 3.5%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #273878;
+  border: 3px solid #273878;
+  color: #F5e000;
+  /* color: #d5c300; */
+  border-radius: 30px;
+  transition: 0.2s;
+  /* box shadow */
+  box-shadow: 2px 3px;
+}
+.pokemonButton a {
+  text-decoration: none;
+  color: #F5e000;
+
+}
+.pokemonButton a:hover, 
+.pokemonButton a:focus {
+  /* background-color: #F5e000; */
+  color: #273878;
+}
+
+.viewCasesButton:hover, .viewCasesButton:focus, .caseButton:hover, .caseButton:focus, .pokemonButton:hover, .pokemonButton:focus {
+  background-color: #F5e000;
+  /* background-color: #d5c300; */
+  color: #273878;
+  border: 3px solid #273878;
+}
+
+.buttonText {
+  padding-bottom: 20px;
+}
+
+.openingText, .userInfo, .crimeCases, .pokemonSuggestion, .results, .choosePokemonMessage {
+  box-shadow: 7px 7px 10px #0d0d71;
+  border: 5px solid #f5e100ba;
+}
+
+/* FONTS */
+/* Body/Paragraph */
+/* font-family: 'Barlow', sans-serif; */
+
+/* SITE COLOURS */
+/* yellow: #f5e000 */
+/* dark blue: #273878 */
+/* pale blue: #c7eef3 */
+
+/* Font Styles */
+body {
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 15%;
+  min-height: 100vh;
+  background-color: #273878;
+}
+
+/* Header fonts */
+h1 {
+  font-family: 'Iceberg', cursive;
+  font-size: 5rem;
+  text-align: center;
+  color: #F5E000;
+  text-shadow: 5px 5px #000;
+}
+
+h2, h3, h4 {
+  font-family: 'Iceberg', cursive;
+}
+
+p, .userInputContainers label, .userInputContainers input, .userInputContainers input::placeholder, .userInputContainers select, .userInputContainers button, .caseButton, .viewCasesButton {
+  font-family: 'Barlow', sans-serif;
+}
+
+/* Introduction Styles */
+.introduction {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.introImg {
+  max-width: 25%;
+  padding-right: 20px;
+}
+
+.openingText {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+}
+.giveName{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.openingText p {
+    padding-bottom: 18px;
+}
+
+/* Error Flag on UserInfo component */
+.errorFlag{
+  color: red;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 500;
+  margin: 1% 0 0 5%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* UserInfo Styles */
+.userInfo {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+  /* box-shadow: 5px 5px 2px rgb(13, 13, 113); */
+}
+.userInfo form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.userInputContainers {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 2%);
+  margin: 1%;
+}
+.userInputContainers label {
+  margin-bottom: 3%;
+  color: #273878;
+  font-weight: 500;
+}
+.userInputContainers select {
+  background-image: url(./assets/magnifying-glass-location-solid.svg);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 1rem;
+  transition: 2s;
+}
+.userInputContainers select:hover, .userInputContainers select:focus {
+  background-image: url(./assets/magnifying-glass-location-solid-psuedo.svg);
+}
+
+.userInputContainers select, .userInputContainers input {
+  appearance: none;
+  display: block;
+  color: #273978;
+  padding: 2% 5%;
+  border: 3px solid #273878;
+  border-radius: 30px;
+  width: 100%;
+  background-color: #f5e000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+.userInputContainers input::placeholder {
+  /* updated text colour check with group */
+  color: #273978c0;
+  transition: 0.2s;
+}
+.userInputContainers option {
+  font-weight: 600;
+  line-height: 1.2rem;
+}
+.userInputContainers select:hover,.userInputContainers select:focus, .userInputContainers input:hover, .userInputContainers input:focus {
+  color: #f5e000;
+  background-color: #273878;
+}
+.userInputContainers input:focus::placeholder, .userInputContainers input:hover::placeholder {
+  color: #f5e000;
+}
+
+/* CrimeFiles styles */
+.crimeCases {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+
+.crimeCases h2 {
+  text-align: center;
+  font-size: 2.75rem;
+  letter-spacing: 1px;
+  color: #273878;
+}
+
+.instruction {
+  text-align: center;
+  color: #273878;
+}
+
+.crimeCases fieldset {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: 10px solid #524c39;
+  background-image: url(./assets/crime-case-background.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  box-shadow: 3px 5px 2px rgb(118, 118, 118);
+  margin: 2% 1.5% 0 1.5%;
+  padding: 3%; 
+}
+
+.crimeCases input[type=radio] {
+  display: none;
+}
+/* maybe adjust in the future but for now the checked case keep sthe inverted button */
+.crimeCases input[type=radio]:checked + .caseButton {
+  background-color: #F5e000;
+  color: #273878;
+  border: 3px solid #273878;
+}
+.caseFile {
+  width: calc((100% / 3) - 2%);
+  background-color: #FFF799;
+  margin: 2% 1%;
+  padding: 5% 2%;
+  /* text-align: center; */
+  box-shadow: 3px 5px 2px rgb(58, 58, 58);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.caseDetail {
+  font-weight: 600;
+  display: block;
+}
+
+.caseFile h3 {
+  margin-bottom: 2%;
+  color: #273878;
+}
+
+.caseFile p {
+  margin-bottom: 2%;
+  /* color: #273878; */
+  font-weight: 500;
+}
+
+.active {
+  text-transform: uppercase;
+}
+
+.caseButton {
+  text-align: center;
+  margin-top: 4%;
+  text-transform: capitalize;
+}
+/* -------------potential loading animation styling(return to)----------------- */
+.loadingStyle{
+  color: #F5e000;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.2rem;
+}
+
+/* Pokemon Selection Styles */
+span{
+  text-transform: capitalize;
+}
+
+.pokemonSuggestion {
+  display: flex;
+  background-color: #E7EEF3;
+  border-radius: 30px;
+  margin-top: 5%;
+}
+
+.pokemonSuggestion img {
+  max-width: 80%;
+}
+.choosePokemonMessage{
+text-align: center;
+font-size: 2.75rem;
+letter-spacing: 1px;
+color: #273878;
+background-color: #E7EEF3;
+padding: 5% 2%;
+border-radius: 30px;
+margin-top: 5%;
+}
+
+.textAndButton {
+  margin-top: 10%;
+}
+
+.textAndButton p {
+  font-size: 1.4rem;
+  padding-bottom: 2%;
+}
+
+/* Results Styles */
+.results {
+  background-color: #E7EEF3;
+  padding: 5% 2%;
+  border-radius: 30px;
+  margin-top: 5%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.results p {
+  font-size: 2rem;
+  padding-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Footer Styles */
+footer {
+  background-color: #273878;
+  color: #FFF;
+  text-align: center;
+  padding: 2% 0%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: #FFF799;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+footer a:hover,
+footer a:focus {
+  border-bottom: 2px solid #FFF799;
+}
+
+.portfolioLinks {
+  margin-top: 5px;
+}
+
+
+/* ------media queries---------- */
+@media (max-width:1000px) {
+  .caseFile {
+    width: 48%;
+  }
+  .introImg {
+    max-width: 30%;
+  }
+  .openingText p {
+    font-size: 0.9rem;
+  }
+  .textAndButton {
+    margin: 5%;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:800px) {
+  .userInfo form {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .userInputContainers {
+    width: 98%;
+    margin-bottom: 3%;
+  }
+  body {
+    padding-bottom: 20%;
+  }
+  .pokemonSuggestion {
+    flex-direction: column;
+    padding: 5%;
+    text-align: center;
+  }
+  .textAndButton p {
+    text-align: left;
+  }
+  .pokemonButton {
+    margin-top: 5%;
+  }
+}
+@media (max-width:771px){
+  .introImg {
+    max-width: 38%;
+  }
+  .openingText p {
+    padding-bottom: 9px;
+  }
+}
+@media (max-width:700px){
+  .openingText {
+    padding: 4% 4%;
+    margin-top: 1%;
+  }
+  .openingText p {
+    padding-bottom: 12px;
+  }
+}
+@media (max-width:635px){
+  .introImg {
+    max-width: 39%;
+  }
+  .openingText p {
+    padding-bottom: 10px;
+  }
+}
+@media (max-width:600px) {
+  .introduction {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .caseFile {
+    width: 98%;
+    padding: 7%;
+    margin-bottom: 4%;
+  }
+  body {
+    padding-bottom: 30%;
+  }
+}
+@media (max-width:570px) {
+  .introImg {
+    max-width: 45%;
+    padding-bottom:10px;
+  }
+  .openingText p {
+    padding-bottom: 12px;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .results p {
+    font-size: 1.3rem;
+    padding: 2% 2%;
+  }
+}
+@media (max-width:500px) {
+  .pokemonSuggestion img {
+    max-width: 60%;
+  }
+  .textAndButton p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width:460px) {
+  body {
+    padding-bottom: 45%;
+  }
+  .introImg {
+  max-width: 48%;
+  padding-bottom: 10px;
+  }
+  .crimeCases h2, .choosePokemonMessage h2 {
+    font-size: 2.5rem;
+  }
+  .instruction {
+    margin-bottom: 5%;
+    padding: 0 10px 0 10px;
+  }
+  .userInputContainers select {
+    background-size: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .userInputContainers input {
+    font-size: 0.8rem;
+  }
+  .viewCasesButton {
+    margin-top: 5%;
+  }
+}
+@media (max-width:396px) {
+  h1 {
+    font-size: 3.7rem;
+  }
+}
+@media (max-width:374px) {
+  .introImg {
+    max-width: 56%;
+  }
+  h1 {
+    font-size: 3.4rem;
+  }
+}
+@media (max-width:345px) {
+  h1 {
+    font-size: 3.1rem;
+  }
+  .openingText {
+    padding: 4% 9%;
+  }
+  .openingText p {
+    padding-bottom: 8.5px;
   }
 }

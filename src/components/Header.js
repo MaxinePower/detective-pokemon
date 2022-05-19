@@ -1,9 +1,8 @@
 // Header
-
 function Header() {
     return(
         <header>
-            <h1>Detective Pokemon</h1>
+            <h1>Detective Pokémon</h1>
         </header>
     );
 } 
