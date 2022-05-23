@@ -48,6 +48,7 @@ function CrimeCases(props) {
         props.pokemonState(true)
     }
 
+    // --------THIS IS NOT ACCESIBLE! AN LI BETWEEN THE FIELDSET ND THE INPUTS IS A BIG PROBLEM!!!!!! REDO TO BUTTONS LIKE POKEMON SELECTIONS
     return (
         <section className="crimeCases" ref={crimeRef}>
             <h2 id="crimeCases">Your Cases</h2>

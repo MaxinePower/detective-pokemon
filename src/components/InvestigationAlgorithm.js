@@ -1,5 +1,5 @@
 // InvestigationAlgorithm
-import investigationData from './investigationData.json'
+import investigationData from '../data/investigationData.json';
 // keys are crime types and the values in the array are the types that lose to that crime type
 
 function InvestigationAlgorithm(props) {

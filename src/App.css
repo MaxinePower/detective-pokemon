@@ -123,7 +123,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 }
 
 .openingText {
-  background-color: #E7EEF3;
+  background-color: #E5FECC;
   padding: 5% 2%;
   border-radius: 30px;
 }
@@ -150,7 +150,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 
 /* UserInfo Styles */
 .userInfo {
-  background-color: #E7EEF3;
+  background-color: #E5FECC;
   padding: 5% 2%;
   border-radius: 30px;
   margin-top: 5%;
@@ -216,7 +216,7 @@ p, .userInputContainers label, .userInputContainers input, .userInputContainers 
 
 /* CrimeFiles styles */
 .crimeCases {
-  background-color: #E7EEF3;
+  background-color: #E5FECC;
   padding: 5% 2%;
   border-radius: 30px;
   margin-top: 5%;
@@ -309,7 +309,7 @@ span{
 
 .pokemonSuggestion {
   display: flex;
-  background-color: #E7EEF3;
+  background-color: #E5FECC;
   border-radius: 30px;
   margin-top: 5%;
 }
@@ -322,7 +322,7 @@ text-align: center;
 font-size: 2.75rem;
 letter-spacing: 1px;
 color: #273878;
-background-color: #E7EEF3;
+background-color: #E5FECC;
 padding: 5% 2%;
 border-radius: 30px;
 margin-top: 5%;
@@ -339,7 +339,7 @@ margin-top: 5%;
 
 /* Results Styles */
 .results {
-  background-color: #E7EEF3;
+  background-color: #E5FECC;
   padding: 5% 2%;
   border-radius: 30px;
   margin-top: 5%;
